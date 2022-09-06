@@ -74,13 +74,17 @@ print("=" * 10, "Section 3.4 if-elif-else", "=" * 10)
 # not between 1 and 5, have the else statement display "That is not a valid number"
 
 number = int(input("Please enter a number between 1 and 5: "))
-if 1 < number < 5:
+if 1 <= number <= 5:
+    if number == 1:
+        print("I")
     if number == 2:
         print("II")
     if number == 3:
         print("III")
     if number == 4:
         print("IV")
+    if number == 5:
+        print("V")
 else:
     print("This is not a valid number")
 
@@ -106,10 +110,10 @@ if customer_age >= 62:
     print(f"Your cost for a customer who is {customer_age} years old", end=" ")
     print(f"will be ${cost_senior:.2f}")
 
-elif 12 <= customer_age <= 61:
+elif customer_age >= 12:
     print(f"Your cost for a customer who is {customer_age} years old", end=" ")
     print(f"will be ${cost_regular:.2f}")
-elif 3 <= customer_age <= 11:
+elif customer_age >= 3:
     print(f"Your cost for a customer who is {customer_age} years old", end=" ")
     print(f"will be ${cost_child * customer_age:.2f}")
 else:
@@ -128,7 +132,7 @@ print(e <= d and e < f)
 # 2) write a print statement using the or operator that will evaluate to true
 print(d > f or f > e)
 # 3) write a print statement using the not operator that will evaluate to true
-print(d != f)
+print(not d == f)
 
 # TODO 3.6 Boolean variables
 print("=" * 10, "Section 3.6 boolean variables", "=" * 10)
