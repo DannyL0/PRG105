@@ -1,7 +1,6 @@
-
 def main():
 
-    print("Select one of the menu options below to find out more") # Menu
+    print("Select one of the menu options below to find out more")  # Menu
     print("A.  Monte Cristo\nB.  Ruben\nC.  Submarine\nD.  Grilled Cheese\nE.  Gyro")
 
     choice = str(input("Please enter the letter of your choice: ")).upper()
@@ -18,24 +17,24 @@ def main():
         gyro()
 
 
-
 def monte_cristo():
-    print("You chose Monte Cristo")
+    print("Egg dipped ham and cheese sandwich\nPan or deep fried")
+
 
 def ruben():
-    print("You chose Ruben")
+    print("Grilled sandwich of corned beef and swiss cheese served on rye bread")
 
 
 def sub():
-    print("You chose Submarine")
+    print("Sandwich consisting of a long roll split down the middle with your choice of meats and veggies")
 
 
 def grilled_cheese():
-    print("You chose Grilled Cheese")
+    print("Grilled cheesed\naccompanied with a side of fries")
 
 
 def gyro():
-    print("You chose Gyro")
+    print("Gyro served on a handmade pita with gyros sauce, tomatoes and onions")
 
 
 main()
