@@ -12,3 +12,4 @@ for i in range(people):
     file.write(", ")
     file.write(email)
     file.write("\n")
+file.close()
