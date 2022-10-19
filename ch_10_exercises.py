@@ -22,7 +22,7 @@ class Dice:  # note class names are capitalized
     def roll(self):
         # TODO get a random value and set side_up for the 6 sides of the dice
         # Note: Think about what makes sense for dice compared to a coin toss
-        self.side_up = random.randint(1,6)
+        self.side_up = random.randint(1, 6)
             
     def get_side_up(self):
         return self.side_up
