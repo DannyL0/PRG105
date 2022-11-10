@@ -22,6 +22,18 @@ class ProductionWorker(Employee):
         self.shift = shift
         self.pay_rate = pay_rate
 
+    def set_shift(self, shift):
+        self.shift = shift
+
+    def set_pay_rate(self, pay_rate):
+        self.pay_rate = pay_rate
+
+    def get_shift(self):
+        return self.shift
+
+    def get_pay_rate(self):
+        return self.pay_rate
+
     def __str__(self):
         return f"\nName: {self.employee_name}\n" \
                f"Employee Number: {self.employee_number}\n" \
