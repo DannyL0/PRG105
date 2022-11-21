@@ -208,6 +208,7 @@ class AddGUI:
         email = self.email_entry.get()
         if name not in self.customers:
             self.customers[name] = email
+            saving(self)
             tkinter.messagebox.showinfo('Confirmation', "The customer has been successfully added")
         else:
             tkinter.messagebox.showerror('Error', "That entry already exists")
@@ -268,6 +269,8 @@ class ChangeGUI:
             _ = tkinter.Label(self.middle_frame, text='Enter the new email: ')
             email = tkinter.Entry(self.middle_frame, width=15, font="TkDefaultFont")
             self.customers[name] = email
+            saving(self)
+            tkinter.messagebox.showinfo('Confirmation', "The email has been updated")
         else:
             tkinter.messagebox.showinfo('Error', "That name is not in the database")
 
@@ -323,8 +326,9 @@ class DeleteGUI:
     def delete_customer(self):
         # get the data from the entry box
         name = self.name_entry.get()
-        if name not in self.customers:
+        if name in self.customers:
             del self.customers[name]
+            saving(self)
             tkinter.messagebox.showinfo('Success', "This entry was successfully deleted")
         else:
             tkinter.messagebox.showinfo('Error', "That name is not in the database")
@@ -332,6 +336,12 @@ class DeleteGUI:
     # this method is called by the Main Menu button to destroy the current window and return to the primary
     def go_back(self):
         self.delete.destroy()
+
+
+def saving(self):
+    input_file = open("customer_file.dat", 'wb')
+    pickle.dump(self.customers, input_file)
+    input_file.close()
 
 
 def main():
